@@ -21,8 +21,8 @@ def Server():
         driver = webdriver.Chrome(chrome_options=options)
     except:
         options.binary_location = tmp_loc
-    
-    driver = webdriver.Chrome(chrome_options=options)
+        driver = webdriver.Chrome(chrome_options=options)
+
     driver.get('https://myu.mans.edu.eg/')
 
 def wait_for_xpath(xpath, time):
