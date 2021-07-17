@@ -14,6 +14,14 @@ def Server():
     global driver
     options = webdriver.ChromeOptions()
     options.add_argument("--start-maximized")
+    
+    tmp_loc = options.binary_location
+    try:
+        options.binary_location = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+        driver = webdriver.Chrome(chrome_options=options)
+    except:
+        options.binary_location = tmp_loc
+    
     driver = webdriver.Chrome(chrome_options=options)
     driver.get('https://myu.mans.edu.eg/')
 
