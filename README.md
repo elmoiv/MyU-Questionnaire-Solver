@@ -1,6 +1,9 @@
 # MyU-Questionnaire-Solver
 Automate filling MyU Questionnaire and save your precious time to play video games
 
+## Requirements
+- Install `selenium` module via `pip install selenium==3.141.0`
+
 ## Usage
 - Open Powershell where `mqs.py` exists.
 - Write:
