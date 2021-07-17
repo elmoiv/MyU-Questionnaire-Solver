@@ -115,7 +115,7 @@ PASS = input('> Enter your Password: ')
 SEMESTER = int(input('> Choose Semester:\n[1] - First Semester\n[2] - Second Semester\n[3] - Summer Semester\nYour choice: '))
 
 if 1 > SEMESTER or SEMESTER > 3:
-    print('Dumbass -_-')
+    input('Dumbass -_-')
     exit(0)
 
 Server()
