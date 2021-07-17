@@ -58,7 +58,6 @@ def Core(name, password, semester):
     xpath('/html/body/nav/div/div/div/div[1]/a/img').click()
     ## Click on the second question button (Visible for us)
     driver.find_elements_by_xpath('//*[contains(@class, "far fa-question-circle")]')[-1].click()
-    #xpath('//*[@id="land-page"]/div/ul/li[10]/a/i').click()
 
     # Switch to Questionnaire frame
     print('>> Searching for frame...')
@@ -83,8 +82,10 @@ def Core(name, password, semester):
 
     ## Iterate through Subjects
     for subject_number in range(1, len(subjects.options) + 1):
-        xpath(f'//*[@id="slcstuCourses"]/option[{subject_number}]').click()
-        print('Subject', subject_number, ':', xpath(f'//*[@id="slcstuCourses"]/option[{subject_number}]').text)
+        subject_choice = xpath(f'//*[@id="slcstuCourses"]/option[{subject_number}]')
+        
+        subject_choice.click()
+        print('Subject', subject_number, ':', subject_choice.text)
        
         ## Switching between tabs
         for tab_number, questions_count in [(1, 3), (2, 7), (3, 3), (4, 2)]:
