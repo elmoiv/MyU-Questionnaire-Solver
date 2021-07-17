@@ -11,4 +11,4 @@ python mqs.py
 - Enjoy.
 
 ## Note
-Both mqs.py and chromedriver.exe must exist in the same destination.
+Both `mqs.py` and `chromedriver.exe` must exist in the same destination.
