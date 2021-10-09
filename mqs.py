@@ -99,7 +99,7 @@ def Core(name, password, semester, year):
         print('Subject', subject_number, ':', subject_choice.text)
        
         ## Switching between tabs
-        for tab_number, questions_count in [(1, 3), (2, 7), (3, 3), (4, 2)]:
+        for tab_number, questions_count in enumerate([3, 7, 3, 2], 1):
             xpath(f'//*[@id="tabs"]/div[1]/button[{tab_number}]').click()
 
             ## If tab has stfff combo box
