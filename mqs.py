@@ -48,7 +48,7 @@ def finish_questions(xpath, tab_number, questions_count):
     except:
         print('>> Already Saved tab', tab_number)
 
-def Core(name, password, semester):
+def Core(name, password, semester, year):
     global driver
 
     xpath = driver.find_element_by_xpath
@@ -75,7 +75,10 @@ def Core(name, password, semester):
 
     print('>> Waiting for options to show...')
     wait_for_xpath('//*[@id="slcstuSemester"]', 20)
-    print('>> Found options, Now selecting Semester....')
+    print('>> Found options, Now selecting Year and Semester....')
+    
+    ## Choose Year
+    xpath(f'//*[@id="slcstuAcademic"]/option[{year}]').click()
 
     ## Choose Semester
     xpath(f'//*[@id="slcstuSemester"]/option[{semester}]').click()
@@ -115,17 +118,23 @@ def Core(name, password, semester):
     input('\n>> Done')
 
 
+ID = input('> Enter your ID: ')
+PASS = input('> Enter your Password: ')
+
+# 1 : Current Year
+# 2 : Last Year
+YEAR = int(input('> Choose Year:\n[1] - Current Year\n[2] - Last Year\nYour choice: '))
+if 1 > YEAR or YEAR > 2:
+    input('Wrong Year, Dumbass -_-')
+    exit(0)
+
 # 1 : First Semester
 # 2 : Second Semester
 # 3 : Summer Semester
-
-ID = input('> Enter your ID: ')
-PASS = input('> Enter your Password: ')
 SEMESTER = int(input('> Choose Semester:\n[1] - First Semester\n[2] - Second Semester\n[3] - Summer Semester\nYour choice: '))
-
 if 1 > SEMESTER or SEMESTER > 3:
-    input('Dumbass -_-')
+    input('Wrong Semster, Dumbass -_-')
     exit(0)
 
 Server()
-Core(ID, PASS, SEMESTER)
+Core(ID, PASS, SEMESTER, YEAR)
