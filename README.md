@@ -10,7 +10,7 @@ Automate filling MyU Questionnaire and save your precious time to play video gam
 ```bash
 python mqs.py
 ```
-- Fill your ID, Password and current semester.
+- Fill your ID, Password and current year and semester.
 - Enjoy.
 
 ## Note
