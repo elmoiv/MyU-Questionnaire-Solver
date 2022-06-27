@@ -100,6 +100,7 @@ def Core(name, password, semester, year):
        
         ## Switching between tabs
         for tab_number, questions_count in enumerate([3, 7, 3, 2], 1):
+            wait_for_xpath(f'//*[@id="tabs"]/div[1]/button[{tab_number}]', 20)
             xpath(f'//*[@id="tabs"]/div[1]/button[{tab_number}]').click()
 
             ## If tab has stfff combo box
